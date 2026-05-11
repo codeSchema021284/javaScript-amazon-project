@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day.js Exercise</title>
+</head>
+<body>
+    <h1>Day.js Exercise</h1>
+    <p>Open the console to see the results of the Day.js exercises.</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+    <script src="dayjs.js" type="module">
+        // Exercise 1: Get the current date and time
+        
+
+        const now = dayjs();
+        const fiveDaysAfter = now.subtract(30, 'day');
+        console.log("Current date and time:", fiveDaysAfter.format('dddd'));
+
+        // Exercise 2: Format the current date in a specific format
+        const formattedDate = now.format('YYYY-MM-DD HH:mm:ss');
+        console.log("Formatted current date:", formattedDate);
+
+        // Exercise 3: Add 7 days to the current date
+        const futureDate = now.add(7, 'day');
+        console.log("Date after adding 7 days:", futureDate.format());
+
+        // Exercise 4: Subtract 3 months from the current date
+        const pastDate = now.subtract(3, 'month');
+        console.log("Date after subtracting 3 months:", pastDate.format());
+
+        // Exercise 5: Get the difference in days between two dates
+        const date1 = dayjs('2022-01-01');
+        const date2 = dayjs('2022-01-15');
+        const diffInDays = date2.diff(date1, 'day');
+        console.log("Difference in days between Jan 1, 2022 and Jan 15, 2022:", diffInDays);
+    </script>
+    
+</body>
+</html>
