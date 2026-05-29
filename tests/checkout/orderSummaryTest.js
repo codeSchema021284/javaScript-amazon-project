@@ -7,6 +7,7 @@ describe('test suite: renderOrderSummary', () => {
       afterEach(() => {
         document.querySelector('.js-test-container').innerHTML = '';
       });
+
     beforeEach( () => {
 
           document.querySelector('.js-test-container').innerHTML = `
@@ -68,8 +69,6 @@ describe('test suite: renderOrderSummary', () => {
        expect(document.querySelector(`.js-cart-item-container-${productId1}`)).toBeNull();
 
        expect(cart.length).toEqual(1);
-       expect(cart[0].productId).toEqual(productId2);
-
-       
+       expect(cart[0].productId).toEqual(productId2);  
     });
 });
