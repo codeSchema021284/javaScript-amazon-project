@@ -15,7 +15,11 @@ describe('test suite: formatCurrency', () => {
 
     it('works with rounding down', () => {
         expect(formatCurrency(2000.4)).toBe('20.00');
-    })
+    });
+
+    it('works with negative numbers', () => {        
+        expect(formatCurrency(-500)).toBe('-5.00');
+    });
 
 
 });
