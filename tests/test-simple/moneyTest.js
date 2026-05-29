@@ -25,3 +25,10 @@ if(formatCurrency(2000.5) === '20.01') {
 } else {
     console.error('formatCurrency is not working correctly for rounding');
 }
+
+if(formatCurrency(2000.4) === '2000') {
+    console.log('formatCurrrency is working correctly');
+
+}else {
+    console.error('formatCurrency is not working correctly');
+}
