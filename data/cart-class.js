@@ -1,14 +1,14 @@
-import { addToCart } from "./cart.js";
-import { addToCart } from "./cart.js";
+class Cart {
 
-
-
-function Cart(storageKey) {
-    const cart = {
- cartItems: undefined,
-
+cartItems;
+storageKey;
+constructor(storageKey) {
+  this.storageKey = storageKey;
+  this.loadFromStorage();
+}
+  
 loadFromStorage() {
-  this.cartItems = JSON.parse(localStorage.getItem(storageKey));
+  this.cartItems = JSON.parse(localStorage.getItem(this.storageKey));
 
 if (!this.cartItems) {
   this.cartItems = [{
@@ -24,11 +24,12 @@ if (!this.cartItems) {
 
 
 }
-},
+}
+
 
  saveToStorage() {
-  localStorage.setItem(storageKey, JSON.stringify(this.cartItems));
-},
+  localStorage.setItem(this.storageKey, JSON.stringify(this.cartItems));
+}
 
  addToCart(productId) {
       let matchingItem; 
@@ -48,7 +49,7 @@ if (matchingItem) {
       });
 }
  this.saveToStorage();
-},
+}
 
 removeFromCart(productId) {
   const newCart = [];
@@ -63,8 +64,7 @@ removeFromCart(productId) {
 
   this.saveToStorage();
 
-},
-
+}
 
  updateDeliveryOption (productId, deliveryOptionId) {
    let matchingItem; 
@@ -79,28 +79,17 @@ matchingItem.deliveryOptionId = deliveryOptionId;
 this.saveToStorage();
 }
 
-};
-return cart;
-}
+} 
 
-const cart = Cart('cart-oop');
 
-const businessCart = Cart('business-cart');
+const cart = new Cart('cart-oop');
 
-cart.loadFromStorage();
-
-businessCart.loadFromStorage();
-
+const businessCart = new Cart('business-cart');
 
 console.log(cart);
 
 
 console.log(businessCart);
 
-
-
-
-
-
-
+console.log(cart instanceof Cart); // true
 
