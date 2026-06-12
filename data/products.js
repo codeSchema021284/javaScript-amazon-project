@@ -33,6 +33,8 @@ extraInfoHTML() {
 }
 }
 
+
+
 class Clothing extends Product {
 sizeChartLink;
 constructor (productDetails) {
@@ -49,6 +51,40 @@ extraInfoHTML() {
   `;
 }
 }
+/*
+const date = new Date();
+
+
+date.toLocaleTimeString();
+*/
+/*
+console.log(this);
+
+const object2 = {
+  a: 1,
+  b: this.a
+};
+*/
+/*
+function logThis() {
+  console.log(this);
+}
+logThis();
+logThis.call({ a: 1, b: 2 });
+
+this
+
+const object3 = {
+  method() {
+    console.log(this);
+    [1, 2, 3].forEach(() => {
+      console.log(this);
+    });
+  } 
+};
+object3.method();
+*/
+
 
 
 export const products = [
