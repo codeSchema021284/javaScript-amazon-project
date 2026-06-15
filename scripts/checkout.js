@@ -4,11 +4,67 @@ import { renderCheckoutHeader } from "./checkout/renderCheckoutHeader.js";
 // import '../data/cart-class.js';
 import '../data/backend-practice.js';
 import {loadProducts} from '../data/products.js';
+import { loadCart } from "../data/cart.js";
 
-loadProducts(() => {
-renderCheckoutHeader();
-renderOrderSummary();
-renderPaymentSummary();
+Promise.all([
+    new Promise((resolve) => {
+   
+    loadProducts(() => {
+      
+        resolve('value1');
+    });
+}),
+
+new Promise((resolve) => {
+        loadCart(() => {
+            resolve();
+        });
+    }),
+
+
+
+]).then((value) => {
+    console.log('value', value);
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
+  
+
 });
 
+/*
+new Promise((resolve) => {
+   
+    loadProducts(() => {
+      
+        resolve('value1');
+    });
+}).then((value) => {
+     console.log('value', value);
+    return new Promise((resolve) => {
+        loadCart(() => {
+            resolve();
+        });
+    });
+
+}).then((value) => {
+   
+
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
+  
+});
+*/
+
+/*
+loadProducts(() => {
+    loadCart(() => {
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
+
+    });
+});
+*/
 
