@@ -1,7 +1,9 @@
 const xhr = new XMLHttpRequest();
 xhr.addEventListener('load', function() {
-  console.log(this.response);
+    this.response
 });
 xhr.open('GET', 'https://supersimplebackend.dev/'); 
 xhr.send();
+
+
 
