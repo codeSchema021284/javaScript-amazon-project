@@ -101,7 +101,7 @@ const promise = fetch('https://supersimplebackend.dev/products').then((response)
   return promise;
 }
 loadProductsFetch().then(() => {
-  console.log('next step');
+
 });
 
 export function loadProducts (fun){

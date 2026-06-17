@@ -6,7 +6,33 @@ import '../data/backend-practice.js';
 import {loadProducts,loadProductsFetch} from '../data/products.js';
 import { loadCart } from "../data/cart.js";
 
-Promise.all([
+ /*   
+async function loadPages(){
+
+
+ await loadProductsFetch();
+
+ const result = await new Promise((resolve) => {
+        loadCart(() => {
+            resolve('value2');
+        });
+    });
+    console.log('result', result);
+
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
+
+}
+
+loadPages();
+*/
+      
+
+async function checkoutpage(){
+
+
+await Promise.all([
     loadProductsFetch(),
 
 new Promise((resolve) => {
@@ -17,14 +43,14 @@ new Promise((resolve) => {
 
 
 
-]).then((value) => {
-    console.log('value', value);
+]);
         renderCheckoutHeader();
         renderOrderSummary();
         renderPaymentSummary();
   
 
-});
+}
+checkoutpage();
 
 /*
 new Promise((resolve) => {
